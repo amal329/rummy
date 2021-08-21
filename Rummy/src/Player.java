@@ -20,8 +20,9 @@ public class Player {
 	
 	public void showCards() {
 		System.out.println(name+"'s cards are :");
+		System.out.print("| ");
 		for(Card c : cards) {
-			System.out.println(c.suit+"-"+c.val);
+			System.out.print(" "+c.suit+"-"+c.val+" |");   // Karthikeya Changed the way of cards appearing. 
 		}
 	}
 	
