@@ -5,6 +5,7 @@ public class Player {
 	public int id;
 	public String name;
 	private int cardLength = 10;
+	private int score = 0;
 	private ArrayList<Card> cards = new ArrayList<>(cardLength);
 	
 	Player(String name){
@@ -56,6 +57,34 @@ public class Player {
 		Card cardToDiscard = this.cards.remove(position-1);
 		this.cards.add(cardToReplace);
 		return cardToDiscard;
+		
+	}
+	
+	public void arrangeCards()
+	{
+		boolean wantToArrange = false;
+		System.out.println("\nDo you want to ararnge the cards?\n[Y]es or [N]o");
+		String arrange = Reader.sc.nextLine();
+		Reader.sc.nextLine();
+		if(arrange.equalsIgnoreCase("Y"))
+			wantToArrange = true;
+		while(wantToArrange)
+		{
+			this.showCards();
+			System.out.println("\nEnter Index of card you want to change Position:");
+			int currentPosition = Reader.sc.nextInt();
+			Reader.sc.nextLine();
+			System.out.println("Enter Index of position at which you want to place the card:");
+			int placingPosition = Reader.sc.nextInt();
+			Reader.sc.nextLine();
+			this.cards.add(placingPosition-1,cards.remove(currentPosition-1));
+			this.showCards();
+			System.out.println("\nDo you want to Stop ararnging the cards?\n[Y]es or [N]o");
+			String arrange1 = Reader.sc.nextLine();
+			Reader.sc.nextLine();
+			if((arrange1.equalsIgnoreCase("Y")))
+				wantToArrange = false;
+		}
 		
 	}
 	
