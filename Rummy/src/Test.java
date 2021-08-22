@@ -42,6 +42,8 @@ public class Test {
 					displayCard = returnedCard;
 				}
 				
+				cd.players.get(i).arrangeCards();
+				
 				System.out.println("Do you want to Drop The Cards\n[Y]es   or [N]o");
 				String quit = Reader.sc.nextLine();
 				Reader.sc.nextLine();
