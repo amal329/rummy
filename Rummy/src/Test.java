@@ -35,16 +35,19 @@ public class Test {
             stock.dealCard(card);
         }
  
-        a.showCards();
-        b.showCards();
-        c.showCards();
  
  
  
         boolean gameStart = true;
  
         Card displayCard = stock.getTopCard();
- 
+        
+        a.showCards();
+        a.arrangeCards();
+        b.showCards();
+        b.arrangeCards();
+        c.showCards();
+        c.arrangeCards();
         while(gameStart)
         {
             for(int i=0;i<3;i++)
@@ -71,6 +74,11 @@ public class Test {
                 Reader.sc.nextLine();
                 if(quit.equalsIgnoreCase("Y"))
                 {
+                	players.remove(i);
+                	for(Player p:players)
+                	{
+                		p.arrangeCards();
+                	}
                     gameStart=false;
                     break;
                 }
