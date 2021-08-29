@@ -63,7 +63,7 @@ public class Player {
 	public void arrangeCards()
 	{
 		boolean wantToArrange = false;
-		System.out.println("\nDo you want to ararnge the cards?\n[Y]es or [N]o");
+		System.out.println("\n"+this.name+", Do you want to ararnge the cards?\n[Y]es or [N]o");
 		String arrange = Reader.sc.nextLine();
 		Reader.sc.nextLine();
 		if(arrange.equalsIgnoreCase("Y"))
