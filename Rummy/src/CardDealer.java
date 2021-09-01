@@ -21,7 +21,7 @@ public class CardDealer extends Thread{
         }
  
         try {
-            Thread.sleep(100);
+            Thread.sleep((int)(Math.random()*400)+10);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
