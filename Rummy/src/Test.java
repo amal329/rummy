@@ -74,10 +74,12 @@ public class Test {
                 Reader.sc.nextLine();
                 if(quit.equalsIgnoreCase("Y"))
                 {
-                	players.remove(i);
+                
                 	for(Player p:players)
                 	{
                 		p.arrangeCards();
+                		p.calculateScore();
+                		System.out.println(p.getScore());
                 	}
                     gameStart=false;
                     break;
