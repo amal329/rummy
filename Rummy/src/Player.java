@@ -19,6 +19,11 @@ public class Player {
 		}
 	}
 	
+	public int getScore()
+	{
+		return this.score;
+	}
+	
 	public void showCards() {
 		System.out.println(name+"'s cards are :");
 		System.out.print("|");
@@ -86,6 +91,58 @@ public class Player {
 				wantToArrange = false;
 		}
 		
+	}
+	
+	public boolean makesSet(Card c1,Card c2,Card c3)
+	{
+		if(c1.val == c2.val && c2.val == c3.val )
+		{
+			return true;
+		}
+		else if(c1.suit.equals(c2.suit) && c2.suit.equals(c3.suit) )
+		{
+			if(c1.val == c2.val+1 && c2.val == c3.val+1)
+			{
+				return true;
+			}
+			return false;
+		}
+		return false;
+	}
+	
+	public boolean makesSet(Card c1,Card c2,Card c3,Card c4)
+	{
+		if(c1.val == c2.val && c2.val == c3.val && c3.val == c4.val)
+		{
+			return true;
+		}
+		else if(c1.suit.equals(c2.suit) && c2.suit.equals(c3.suit))
+		{
+			if(c1.val+1 == c2.val && c2.val+1 == c3.val && c3.val+1 == c4.val)
+			{
+				return true;
+			}
+			return false;
+		}
+		return false;
+	}
+	
+	
+	public void calculateScore()
+	{
+		
+		if(!(makesSet(this.cards.get(0),this.cards.get(1),this.cards.get(2))))
+		{
+			this.score = this.score + this.cards.get(0).score+this.cards.get(1).score+this.cards.get(2).score;
+		}
+		if(!(makesSet(this.cards.get(3),this.cards.get(4),this.cards.get(5))))
+		{
+			this.score = this.score + this.cards.get(3).score+this.cards.get(4).score+this.cards.get(5).score;
+		}
+		if(!(makesSet(this.cards.get(6),this.cards.get(7),this.cards.get(8),this.cards.get(9))))
+		{
+			this.score = this.score + this.cards.get(6).score+this.cards.get(7).score+this.cards.get(8).score+this.cards.get(9).score;
+		}
 	}
 	
 	
