@@ -11,7 +11,7 @@ public class Card {
 	}
 	
 	public void displayTheCard()
-	{
+	{ 
 		System.out.println(this.suit+"-"+this.val);
 	}
 }

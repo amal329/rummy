@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class Deck {
@@ -27,10 +26,8 @@ public class Deck {
  
     public synchronized Card pickCard() throws InterruptedException {
  
-        if(!canPick){
-            while(!canPick){
-                wait();
-            }
+        while(!canPick){
+            wait();
         }
  
         canPick = false;

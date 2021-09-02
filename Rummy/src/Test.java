@@ -14,7 +14,7 @@ public class Test {
         ArrayList<Player> players = new ArrayList<>();
         players.add(a);
         players.add(b);
-        players.add(b);
+        players.add(c);
  
         Stock stock = new Stock();
  
@@ -79,7 +79,7 @@ public class Test {
                 	{
                 		p.arrangeCards();
                 		p.calculateScore();
-                		System.out.println(p.getScore());
+                		System.out.println(p.getName()+"'s score is : "+p.getScore());
                 	}
                     gameStart=false;
                     break;

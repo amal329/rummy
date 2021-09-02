@@ -13,6 +13,30 @@ public class Player {
 		this.name = name;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public static int getCount() {
+		return count;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public int getCardLength() {
+		return cardLength;
+	}
+
+	public ArrayList<Card> getCards() {
+		return cards;
+	}
+
 	public void dealCard(Card c) {
 		if(cards.size() < cardLength) {
 			cards.add(c);
@@ -68,7 +92,7 @@ public class Player {
 	public void arrangeCards()
 	{
 		boolean wantToArrange = false;
-		System.out.println("\n"+this.name+", Do you want to ararnge the cards?\n[Y]es or [N]o");
+		System.out.println("\n"+this.name+", Do you want to arrange the cards?\n[Y]es or [N]o");
 		String arrange = Reader.sc.nextLine();
 		Reader.sc.nextLine();
 		if(arrange.equalsIgnoreCase("Y"))
@@ -84,7 +108,7 @@ public class Player {
 			Reader.sc.nextLine();
 			this.cards.add(placingPosition-1,cards.remove(currentPosition-1));
 			this.showCards();
-			System.out.println("\nDo you want to Stop ararnging the cards?\n[Y]es or [N]o");
+			System.out.println("\nDo you want to Stop arranging the cards?\n[Y]es or [N]o");
 			String arrange1 = Reader.sc.nextLine();
 			Reader.sc.nextLine();
 			if((arrange1.equalsIgnoreCase("Y")))
